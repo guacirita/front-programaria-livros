@@ -7,6 +7,12 @@
 }
 
 .footerText {
-  color: #ffff ;
+  color: #210062 ;
   font-size: 1rem;
+}
+
+@media(max-width: 765px){
+  .footerText {
+    text-align: center;
+  }
 }

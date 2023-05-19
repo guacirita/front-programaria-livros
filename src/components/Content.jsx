@@ -11,7 +11,7 @@ export function Content() {
   const [repositories, setRepositories] = useState([])
   const [nome, setNome] = useState('')
   const [autora, setAutora] = useState('')
-  const [categoria, setCategoria] = useState('')
+  const [citacao, setCitacao] = useState('')
   const [imagem, setImagem] = useState('')
   const [success, setSuccess] = useState(false)
   const baseURL = 'https://back-end-livros.onrender.com/livros'
@@ -36,20 +36,20 @@ export function Content() {
     setImagem(event.target.value)
   }
 
-  function handleInputValueCategoria(event) {
-    setCategoria(event.target.value)
+  function handleInputValueCitacao(event) {
+    setCitacao(event.target.value)
   }
 
   function handleCreateMessage(event) {
     event.preventDefault()
 
-    console.log('mensagem enviada', nome, autora, categoria, imagem)
+    console.log('mensagem enviada', nome, autora, citação, imagem)
 
     async function sendData() {
       await Axios.post(baseURL, {
         nome: nome,
         autora: autora,
-        categoria: categoria,
+        citacao: citacao,
         imagem: imagem
       })
       const response = await Axios.get(baseURL)
@@ -61,7 +61,7 @@ export function Content() {
     setNome('')
     setAutora('')
     setImagem('')
-    setCategoria('')
+    setCitacao('')
   }
 
   return (
@@ -85,7 +85,7 @@ export function Content() {
                     {repo.nome}
                   </summary>
                   <p className={styles.cardRepoText}>{repo.autora}</p>
-                  <q className={styles.cardRepoQuote}>{repo.categoria}</q>
+                  <q className={styles.cardRepoQuote}>{repo.citacao}</q>
                 </details>
               </div>
               )
@@ -115,9 +115,9 @@ export function Content() {
             className={styles.formTextArea}
           />
           <textarea 
-            onChange={handleInputValueCategoria} 
-            placeholder="Digite a categoria"
-            value={categoria}
+            onChange={handleInputValueCitacao} 
+            placeholder="Digite uma citação da autora"
+            value={citacao}
             className={styles.formTextArea}
           />
           <button className={styles.formButton} type="submit">Enviar mensagem</button>

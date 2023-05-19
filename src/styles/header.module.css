@@ -27,4 +27,15 @@
   .headerImage {
     width: 100%;
   }
+
+  .headerTitle {
+    font-size: 3rem;
+    text-align: center;
+  }
+  
+  .headerSubtitle {
+    font-size: 1.3rem;
+    text-align: center;
+  }
 }
+
