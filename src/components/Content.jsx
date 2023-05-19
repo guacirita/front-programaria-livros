@@ -29,7 +29,7 @@ export function Content() {
   }
 
   function handleInputValueAutora(event) {
-    setminibio(event.target.value)
+    setAutora(event.target.value)
   }
 
   function handleInputValueImagem(event) {
@@ -37,7 +37,7 @@ export function Content() {
   }
 
   function handleInputValueCategoria(event) {
-    setCitacao(event.target.value)
+    setCategoria(event.target.value)
   }
 
   function handleCreateMessage(event) {
